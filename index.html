@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Contraseñas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Generador de Contraseñas</h1>
+
+    <div class="input-group">
+      <div style="position: relative;">
+        <input type="password" id="seedWord" placeholder="Palabra semilla" 
+               oninput="enforceLowercase(this)" pattern="[a-z0-9]*" />
+        <div class="seed-word-control">
+          <input type="checkbox" id="toggleSeedWord" onchange="toggleSeedWordVisibility()" /> 
+          <label for="toggleSeedWord">Ocultar / Ver</label>
+        </div>
+      </div>
+      <input type="text" id="baseWord" placeholder="Palabra base" oninput="enforceLowercase(this)" pattern="[a-z0-9]*" />
+    </div>
+
+    <div class="length-control">
+      <label for="passwordLength">Longitud de la contraseña: <span id="lengthDisplay">10</span></label>
+      <input type="range" id="passwordLength" min="2" max="50" value="10" 
+             oninput="document.getElementById('lengthDisplay').textContent = this.value">
+    </div>
+
+    <div class="checkbox-group">
+      <div class="checkbox-item">
+        <input type="checkbox" id="uppercase" checked>
+        <label for="uppercase">Mayúsculas</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="lowercase" checked>
+        <label for="lowercase">Minúsculas</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="numbers" checked>
+        <label for="numbers">Números</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="symbols" checked>
+        <label for="symbols">Símbolos especiales</label>
+      </div>
+    </div>
+
+    <button onclick="generatePassword()" id="generateBtn">Generar Contraseña</button>
+    <button class="copy-btn" onclick="copyPassword()">Copiar Contraseña</button>
+
+    <div class="password-display" id="passwordDisplay">
+      Tu contraseña aparecerá aquí
+    </div>
+
+    <div class="strength-meter-container">
+      <label>Indicador de Fuerza</label>
+      <div class="strength-meter">
+        <div class="strength-meter-fill" id="strengthMeter"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cargar la librería CryptoJS desde un CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
+  <!-- Luego carga tu archivo script.js que utiliza CryptoJS -->
+  <script src="script.js"></script>
+</body>
+</html>

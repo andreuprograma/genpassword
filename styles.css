@@ -1,0 +1,144 @@
+/* styles.css */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+.password-display {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  min-height: 50px;
+  word-break: break-all;
+}
+
+.strength-meter-container {
+  margin-top: 20px;
+}
+
+.strength-meter-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.strength-meter {
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.strength-meter-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.length-control {
+  margin: 20px 0;
+}
+
+.length-control input[type="range"] {
+  width: 100%;
+}
+
+.length-display {
+  text-align: center;
+  font-size: 1.2em;
+  color: #2c3e50;
+  margin-top: 5px;
+}
+
+.seed-word-control {
+  position: relative;
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.copy-btn {
+  margin-top: 10px;
+  background: #27ae60;
+}
+
+.copy-btn:hover {
+  background: #229954;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  input,
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .password-display {
+    min-height: 60px;
+  }
+}
